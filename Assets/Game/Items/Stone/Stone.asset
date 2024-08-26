@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   textName: stone
-  image: {fileID: 21300000, guid: b89fe2590d8ec69499790be471838e22, type: 3}
-  prefab: {fileID: 3924804019003708071, guid: d7f4866c5cbb9d749baa3997d4460b39, type: 3}
+  image: {fileID: 21300000, guid: 3dddcd14cb84cd44cb2bc805fe6c080c, type: 3}
+  prefab: {fileID: 3924804019003708071, guid: 1d3d9ddb431d8134daba9d8c93de0f9f, type: 3}

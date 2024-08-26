@@ -15,4 +15,9 @@ public class SpawnItem : MonoBehaviour, IPickupable
     {
        return item;
     }
+
+    public void SetResource(IResource resource)
+    {
+        item = (Item)resource;
+    }
 }

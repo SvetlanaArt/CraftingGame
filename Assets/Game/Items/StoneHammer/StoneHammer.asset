@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StoneHammer
   m_EditorClassIdentifier: 
   textName: stoneHammer
-  image: {fileID: 21300000, guid: 7ca7086ba642d1d438625752d4611f9e, type: 3}
-  prefab: {fileID: 1557170760669628, guid: 217dd0754bebecf4bb241e0878abd788, type: 3}
+  image: {fileID: 21300000, guid: d3d34d79184853941982d2fc1f28d0cb, type: 3}
+  prefab: {fileID: 1557170760669628, guid: 925e834fef8d4d14a92e45fb8c16de5c, type: 3}

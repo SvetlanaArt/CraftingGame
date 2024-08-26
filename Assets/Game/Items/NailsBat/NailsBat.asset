@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NailsBat
   m_EditorClassIdentifier: 
   textName: nailsBat
-  image: {fileID: 21300000, guid: 7133d10a27662464ab936b3634537a12, type: 3}
-  prefab: {fileID: 1631479277477264, guid: 3524e404ac40422438e622166d0adef4, type: 3}
+  image: {fileID: 21300000, guid: c74bd64abf94c8b4c82d16eaeab12349, type: 3}
+  prefab: {fileID: 1631479277477264, guid: 329323659566a9e4bb4abd33552f70a9, type: 3}

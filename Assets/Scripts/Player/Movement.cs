@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 namespace CraftingUnit.Player
 {
@@ -19,10 +20,15 @@ namespace CraftingUnit.Player
 
         void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (IsClickInGame())
             {
                 ToCursor();
             }
+        }
+
+        private static bool IsClickInGame()
+        {
+            return Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject();
         }
 
         private void ToCursor()

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Nail
   m_EditorClassIdentifier: 
   textName: nail
-  image: {fileID: 21300000, guid: a88d4cb7fea9c8849802449b0e0f174a, type: 3}
-  prefab: {fileID: 141514, guid: 7ef8c97723fa2463bb400c64db7e970e, type: 3}
+  image: {fileID: 21300000, guid: b0fcc564eea4b4b4cb457c53ca574a2c, type: 3}
+  prefab: {fileID: 141514, guid: 8eaace8f09d03954b83327c1c2d7e026, type: 3}

@@ -52,5 +52,5 @@
         "temp/":true,
         "Temp/":true
     },
-    "dotnet.defaultSolution": "UnityCraftingGame.sln"
+    "dotnet.defaultSolution": "CraftingGame.sln"
 }

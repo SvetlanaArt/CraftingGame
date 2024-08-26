@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: 
   textName: iron
-  image: {fileID: 21300000, guid: 99d898279988ef147bf7b3478be27367, type: 3}
-  prefab: {fileID: 8503475240574613379, guid: b564547143c10e847871b0d255f9a309, type: 3}
+  image: {fileID: 21300000, guid: bff77f8b2723a974f9fa526759a729cf, type: 3}
+  prefab: {fileID: 8503475240574613379, guid: 46aafb94fa56f3c4d809128c6c049ec3, type: 3}
