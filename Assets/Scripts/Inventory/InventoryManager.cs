@@ -40,6 +40,7 @@ namespace CraftingModule.Inventory
                 OnCountChange?.Invoke(item, inventoryItem.Count);
             }
         }
+
     }
 }
 

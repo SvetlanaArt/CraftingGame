@@ -1,8 +1,12 @@
 
-using CraftingModule.Core;
-
-public interface IPickupable
+namespace CraftingModule.Core
 {
-    public IResource GetResource();
-    public void SetResource(IResource resource);
+    /// <summary>
+    /// Interface for pick-up objects
+    /// </summary>
+    public interface IPickupable
+    {
+        public IResource GetResource();
+        public void SetResource(IResource resource);
+    }
 }

@@ -1,6 +1,6 @@
 using CraftingModule.Inventory;
 using CraftingModule.Player;
-using CraftingModule.Ui;
+using CraftingModule.UI.Inventory;
 using UnityEngine;
 
 namespace CraftingModule.Controllers
@@ -14,6 +14,7 @@ namespace CraftingModule.Controllers
         [SerializeField] PickUp playerPickUp;
         [SerializeField] Drop playerDrop;
         [SerializeField] UIInventory uIInventory;
+        [SerializeField] CraftingController craftingController;
 
         private InventoryManager inventoryManager;
 
@@ -30,6 +31,13 @@ namespace CraftingModule.Controllers
             inventoryManager.OnCountChange += uIInventory.ChangeItemCount;
             uIInventory.OnDrop += inventoryManager.Remove;
             uIInventory.OnDrop += playerDrop.DropItem;
+
+            if (craftingController != null)
+            {
+                craftingController.OnItemCreated += inventoryManager.Add;
+                craftingController.OnItemUsed += inventoryManager.Remove;
+                inventoryManager.OnCountChange += craftingController.UpdateResources;
+            }
         }
     }
 }

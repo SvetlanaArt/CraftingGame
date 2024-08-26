@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using CraftingModule.Core;
 using UnityEngine;
 
-namespace CraftingModule.Ui
+namespace CraftingModule.UI.Inventory
 {
     /// <summary>
     /// Manage an inventory UI

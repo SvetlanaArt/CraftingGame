@@ -1,7 +1,5 @@
 using CraftingModule.Core;
-using CraftingModule.Items;
 using UnityEngine;
-
 
 namespace CraftingModule.Items
 {
