@@ -34,5 +34,8 @@ You can use additional editor windows to create or edit files (ScriptableObjects
 
 ![CraftConfiguration](https://github.com/user-attachments/assets/ec0dfd42-e20e-4e53-8ff7-9ce4e99217b3)
 
+## Effects
 
-
+There is ability to add effects in Editor Hierarchy:
+- Events when the player picks up or drop an item (Player->Interaction : Drop.cs, PickUp.cs)
+- Crafting success or failed events (Controlles -> CraftingController : CraftingController.cs)
