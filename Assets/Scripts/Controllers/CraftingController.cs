@@ -4,6 +4,7 @@ using CraftingModule.Core;
 using CraftingModule.Crafting;
 using CraftingModule.UI.Crafting;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CraftingModule.Controllers
 {
@@ -15,6 +16,9 @@ namespace CraftingModule.Controllers
     {
         [SerializeField] CraftingConfig craftingConfig;
         [SerializeField] UICrafting uiCrafting;
+
+        [SerializeField] UnityEvent onSuccessCraft;
+        [SerializeField] UnityEvent onFailureCraft;
 
         public event Action<IResource> OnItemCreated;
         public event Action<IResource> OnItemUsed;
@@ -38,6 +42,10 @@ namespace CraftingModule.Controllers
             if (isSuccess)
             {
                 OnItemCreated?.Invoke(craftable.GetCraftingItem());
+                onSuccessCraft?.Invoke();
+            }
+            else{
+                onFailureCraft?.Invoke();
             }
 
             List<IResource> resources = craftable.GetReources();

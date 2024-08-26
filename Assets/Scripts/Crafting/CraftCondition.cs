@@ -18,8 +18,7 @@ namespace CraftingModule.Crafting
         [SerializeField] Item source1Item;
         [SerializeField] Item source2Item;
 
-        [SerializeField] UnityEvent onSuccess;
-        [SerializeField] UnityEvent onFailure;
+       
 
         public IResource GetCraftingItem()
         {
@@ -38,14 +37,6 @@ namespace CraftingModule.Crafting
         {
             bool success = Random.Range(0, 100) < successChance;
 
-            if (success)
-            {
-                onSuccess.Invoke();
-            }
-            else
-            {
-                onFailure.Invoke();
-            }
             return success;
         }
 

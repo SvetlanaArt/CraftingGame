@@ -560,6 +560,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftingConfig: {fileID: 11400000, guid: a2b9b3223c49b7345b826a97f06a0b6d, type: 2}
   uiCrafting: {fileID: 1943186550}
+  onSuccessCraft:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1986956691}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayCraftSuccessSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFailureCraft:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1986956691}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayCraftFaildSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &751486044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1844,6 +1874,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2067621173257659136, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnPickUpEffects.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067621173257659136, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnPickUpEffects.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067621173257659136, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnPickUpEffects.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1986956691}
+    - target: {fileID: 2067621173257659136, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnPickUpEffects.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067621173257659136, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnPickUpEffects.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayPickUpSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067621173257659136, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnPickUpEffects.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067621173257659136, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnPickUpEffects.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2447894215789179876, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1900,6 +1958,34 @@ PrefabInstance:
       propertyPath: itemsParent
       value: 
       objectReference: {fileID: 5060437113156127255}
+    - target: {fileID: 9222110166225360572, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnDropEffects.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222110166225360572, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnDropEffects.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222110166225360572, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnDropEffects.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1986956691}
+    - target: {fileID: 9222110166225360572, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnDropEffects.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222110166225360572, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnDropEffects.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayDropSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222110166225360572, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnDropEffects.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222110166225360572, guid: 325def109a8cfdd4aa87fd878aab22db, type: 3}
+      propertyPath: OnDropEffects.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2072,7 +2158,8 @@ PrefabInstance:
       value: Good work :D
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3916320590593516168, guid: 87b614a53de2d3a4cb98f10fc8145d54, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87b614a53de2d3a4cb98f10fc8145d54, type: 3}
@@ -2092,6 +2179,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a9c9401128527498aad9cdcde26d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1986956689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1986956690}
+  - component: {fileID: 1986956691}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1986956690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986956689}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1986956691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986956689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5c501dd410a57449d0e6f43a8096f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftSuccessSound: {fileID: 8300000, guid: 552ffcb865c3d8a4ca864bf79edba0ad, type: 3}
+  craftFaildSound: {fileID: 8300000, guid: e2c181acc1c926a4fab1b63d0d172861, type: 3}
+  craftVolume: 0.5
+  pickUpSound: {fileID: 8300000, guid: ece31efe865fc304c955fa17df92622f, type: 3}
+  dropSound: {fileID: 8300000, guid: 6639c7b99efc4084e94d9a85c427897a, type: 3}
+  playerVolume: 0.5
 --- !u!1 &2023996584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,4 +2975,5 @@ SceneRoots:
   - {fileID: 5060437113156127255}
   - {fileID: 1256693363}
   - {fileID: 2087406284}
+  - {fileID: 1986956690}
   - {fileID: 1305637365}

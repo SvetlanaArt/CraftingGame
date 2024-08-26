@@ -1,6 +1,7 @@
 using CraftingModule.Core;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 namespace CraftingModule.Player
 {
@@ -15,12 +16,16 @@ namespace CraftingModule.Player
         [SerializeField] Transform itemsParent;
         [SerializeField] Transform PlayerParent;
 
+        [SerializeField] UnityEvent OnDropEffects;
+
         public void DropItem(IResource item)
         {
             Vector3 itemPosition;
             TryFindPosition(out itemPosition);
 
             CreateItem(item, itemPosition);
+
+            OnDropEffects?.Invoke();
         }
 
         private bool TryFindPosition(out Vector3 itemPosition)

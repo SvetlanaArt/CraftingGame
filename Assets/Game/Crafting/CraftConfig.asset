@@ -17,39 +17,15 @@ MonoBehaviour:
     successChance: 80
     source1Item: {fileID: 11400000, guid: 2636aeb12a4071c49939fbd8e1e0a54e, type: 2}
     source2Item: {fileID: 11400000, guid: 2636aeb12a4071c49939fbd8e1e0a54e, type: 2}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
   - craftingItem: {fileID: 11400000, guid: 48c449511c5b3754b8a317deefd29be0, type: 2}
     successChance: 60
     source1Item: {fileID: 11400000, guid: d2f3d4c794ed2ac4296fceee08afa440, type: 2}
     source2Item: {fileID: 11400000, guid: d2f3d4c794ed2ac4296fceee08afa440, type: 2}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
   - craftingItem: {fileID: 11400000, guid: 30d83a59999ecc9418116f2fe8021734, type: 2}
     successChance: 40
     source1Item: {fileID: 11400000, guid: f1aec37b899b08447946affb1327e36a, type: 2}
     source2Item: {fileID: 11400000, guid: ec3ab85b1c18e354c9d5b7d250dc752d, type: 2}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
   - craftingItem: {fileID: 11400000, guid: 50b7641a0f031e24d949aed4f355233b, type: 2}
     successChance: 20
     source1Item: {fileID: 11400000, guid: ec3ab85b1c18e354c9d5b7d250dc752d, type: 2}
     source2Item: {fileID: 11400000, guid: 48c449511c5b3754b8a317deefd29be0, type: 2}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []

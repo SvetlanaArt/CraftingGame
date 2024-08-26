@@ -1,6 +1,7 @@
 using System;
 using CraftingModule.Core;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CraftingModule.Player
 {
@@ -9,6 +10,7 @@ namespace CraftingModule.Player
     /// </summary>
     public class PickUp : MonoBehaviour
     {
+        [SerializeField] UnityEvent OnPickUpEffects;
 
         public event Action<IResource> OnPickup;
 
@@ -18,7 +20,8 @@ namespace CraftingModule.Player
             if (item != null)
             {
                 OnPickup?.Invoke(item.GetResource());
-                
+                OnPickUpEffects?.Invoke();
+
                 Destroy(other.gameObject);
             }
         }
