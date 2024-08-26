@@ -9,3 +9,4 @@ Assets:
 
 - AI Navigation 1.1.5
 - Cinemachine 2.9.7
+- TextMeshPro 3.0.6

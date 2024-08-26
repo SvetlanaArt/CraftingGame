@@ -1,22 +1,29 @@
 
-
-public class InventoryItem
+namespace CraftingModule.Inventory
 {
-    public int Count {get; private set;}
+    /// <summary>
+    /// Count inventory items of one type 
+    /// </summary>
 
-    public InventoryItem()
+    public class InventoryItem
     {
-        Count = 1;
-    }
+        public int Count { get; private set; }
 
-    public void Add()
-    {
-        Count++;
-    }
+        public InventoryItem()
+        {
+            Count = 1;
+        }
 
-    public void Remove()
-    {
-        Count--;
+        public void Add()
+        {
+            Count++;
+        }
+
+        public void Remove()
+        {
+            Count--;
+        }
+
     }
 
 }

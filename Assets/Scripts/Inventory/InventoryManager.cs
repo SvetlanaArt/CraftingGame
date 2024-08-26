@@ -2,34 +2,45 @@ using System;
 using System.Collections.Generic;
 using CraftingModule.Core;
 
-public class InventoryManager
+namespace CraftingModule.Inventory
 {
-    public event Action<IResource, int> OnCountChange;
- 
-    private Dictionary<IResource, InventoryItem> storedItems = new Dictionary<IResource, InventoryItem>();
 
-    public void Add(IResource item)
+    /// <summary>
+    /// Manage Inventory
+    /// </summary>
+    public class InventoryManager
     {
-        if (storedItems.TryGetValue(item, out InventoryItem inventoryItem))
-        {
-            inventoryItem.Add();
-        } else {
-            inventoryItem = new InventoryItem(); 
-            storedItems.Add(item, inventoryItem);    
-        }
-        OnCountChange?.Invoke(item, inventoryItem.Count);
-    }
+        public event Action<IResource, int> OnCountChange;
 
-    public void Remove(IResource item)
-    {
-        if (storedItems.TryGetValue(item, out InventoryItem inventoryItem))
+        private Dictionary<IResource, InventoryItem> storedItems = new Dictionary<IResource, InventoryItem>();
+
+        public void Add(IResource item)
         {
-            inventoryItem.Remove();
-            if (inventoryItem.Count <= 0)
+            if (storedItems.TryGetValue(item, out InventoryItem inventoryItem))
             {
-                storedItems.Remove(item);
+                inventoryItem.Add();
+            }
+            else
+            {
+                inventoryItem = new InventoryItem();
+                storedItems.Add(item, inventoryItem);
             }
             OnCountChange?.Invoke(item, inventoryItem.Count);
         }
+
+        public void Remove(IResource item)
+        {
+            if (storedItems.TryGetValue(item, out InventoryItem inventoryItem))
+            {
+                inventoryItem.Remove();
+                if (inventoryItem.Count <= 0)
+                {
+                    storedItems.Remove(item);
+                }
+                OnCountChange?.Invoke(item, inventoryItem.Count);
+            }
+        }
     }
 }
+
+

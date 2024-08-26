@@ -3,6 +3,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Present one inventory item on UI
+/// </summary>
+
 public class UIItem : MonoBehaviour
 {
     [SerializeField] Image image;
@@ -23,7 +27,6 @@ public class UIItem : MonoBehaviour
 
     public void DropItem()
     {
-        Debug.Log("click ");
         OnDrop?.Invoke();
     }
 }

@@ -3,40 +3,48 @@ using System.Collections.Generic;
 using CraftingModule.Core;
 using UnityEngine;
 
-public class UIInventory : MonoBehaviour
+namespace CraftingModule.Ui
 {
-    [SerializeField] Transform itemsContainer;
-    [SerializeField] GameObject itemPrefub;
- 
-    private Dictionary<string, UIItem> inventoryItems = new Dictionary<string, UIItem>();
-
-    public event Action<IResource> OnDrop;  
-
-    public void ChangeItemCount(IResource item, int count)
+    /// <summary>
+    /// Manage an inventory UI
+    /// </summary>
+    public class UIInventory : MonoBehaviour
     {
-        string itemId = item.GetId();
-        if (inventoryItems.TryGetValue(itemId, out UIItem uIItem))
+        [SerializeField] Transform itemsContainer;
+        [SerializeField] GameObject itemPrefub;
+
+        private Dictionary<string, UIItem> inventoryItems = new Dictionary<string, UIItem>();
+
+        public event Action<IResource> OnDrop;
+
+        public void ChangeItemCount(IResource item, int count)
         {
-            if (count <= 0)
+            string itemId = item.GetId();
+            if (inventoryItems.TryGetValue(itemId, out UIItem uIItem))
             {
-                inventoryItems.Remove(itemId);
-                Destroy(uIItem.gameObject);
+                if (count <= 0)
+                {
+                    inventoryItems.Remove(itemId);
+                    Destroy(uIItem.gameObject);
+                    return;
+                }
+                uIItem.ChangeCount(count);
                 return;
             }
-            uIItem.ChangeCount(count);
-            return;
+            CreatNewUIItem(item, count, itemId);
         }
-        CreatNewUIItem(item, count, itemId);
-    }
 
-    private void CreatNewUIItem(IResource item, int count, string itemId)
-    {
-        UIItem uIItemNew = Instantiate(itemPrefub, itemsContainer).GetComponent<UIItem>();
-        if (uIItemNew != null)
+        private void CreatNewUIItem(IResource item, int count, string itemId)
         {
-            uIItemNew.OnDrop += () => OnDrop?.Invoke(item);
-            uIItemNew.Create(item.GetSprite(), count);
-            inventoryItems.Add(itemId, uIItemNew);
+            UIItem uIItemNew = Instantiate(itemPrefub, itemsContainer).GetComponent<UIItem>();
+            if (uIItemNew != null)
+            {
+                uIItemNew.OnDrop += () => OnDrop?.Invoke(item);
+                uIItemNew.Create(item.GetSprite(), count);
+                inventoryItems.Add(itemId, uIItemNew);
+            }
         }
     }
 }
+
+

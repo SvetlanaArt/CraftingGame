@@ -1,26 +1,36 @@
+using CraftingModule.Inventory;
 using CraftingModule.Player;
+using CraftingModule.Ui;
 using UnityEngine;
 
-public class InventoryController : MonoBehaviour
+namespace CraftingModule.Controllers
 {
-    [SerializeField] PickUp playerPickUp;
-    [SerializeField] Drop playerDrop;
-    [SerializeField] UIInventory uIInventory; 
+    /// <summary>
+    /// Control interaction Ui Inventory, InventoryManager and Player
+    /// </summary>
 
-    private InventoryManager inventoryManager;
-
-    void Start()
+    public class InventoryController : MonoBehaviour
     {
-        inventoryManager = new InventoryManager();
+        [SerializeField] PickUp playerPickUp;
+        [SerializeField] Drop playerDrop;
+        [SerializeField] UIInventory uIInventory;
 
-        InitEvents();
-    }
+        private InventoryManager inventoryManager;
 
-    private void InitEvents()
-    {
-        playerPickUp.OnPickup += inventoryManager.Add;
-        inventoryManager.OnCountChange += uIInventory.ChangeItemCount;
-        uIInventory.OnDrop += inventoryManager.Remove;
-        uIInventory.OnDrop += playerDrop.DropItem;
+        void Start()
+        {
+            inventoryManager = new InventoryManager();
+
+            InitEvents();
+        }
+
+        private void InitEvents()
+        {
+            playerPickUp.OnPickup += inventoryManager.Add;
+            inventoryManager.OnCountChange += uIInventory.ChangeItemCount;
+            uIInventory.OnDrop += inventoryManager.Remove;
+            uIInventory.OnDrop += playerDrop.DropItem;
+        }
     }
 }
+

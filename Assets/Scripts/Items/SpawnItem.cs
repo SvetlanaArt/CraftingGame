@@ -2,22 +2,31 @@ using CraftingModule.Core;
 using CraftingModule.Items;
 using UnityEngine;
 
-public class SpawnItem : MonoBehaviour, IPickupable
+
+namespace CraftingModule.Items
 {
-    [SerializeField] Item item;
+    /// <summary>
+    /// Spawn Item
+    /// </summary>
 
-    private void Start()
+    public class SpawnItem : MonoBehaviour, IPickupable
     {
-        Instantiate(item.GetPrefab(), transform);
-    }
+        [SerializeField] Item item;
 
-    public IResource GetResource()
-    {
-       return item;
-    }
+        private void Start()
+        {
+            Instantiate(item.GetPrefab(), transform);
+        }
 
-    public void SetResource(IResource resource)
-    {
-        item = (Item)resource;
+        public IResource GetResource()
+        {
+            return item;
+        }
+
+        public void SetResource(IResource resource)
+        {
+            item = (Item)resource;
+        }
     }
 }
+
