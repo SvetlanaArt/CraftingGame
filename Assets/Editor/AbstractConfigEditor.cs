@@ -23,23 +23,33 @@ namespace CraftingModule.Editor
         protected static string windowTitle = "";
 
         private Vector2 scrollPosition = Vector2.zero;
+        private string message = "";
 
         protected virtual void OnGUI()
         {
             ConfigName = EditorGUILayout.TextField("Config Name", ConfigName);
             SavePath = EditorGUILayout.TextField("Save Path", SavePath);
-
+            
+            bool isConfigCreated = false;
             if (GUILayout.Button("Create new config"))
             {
-                CreateConfig();
+                message = "";
+                isConfigCreated = CreateConfig();
+                if (!isConfigCreated)
+                    message = "Please enter a valid path";
             }
 
-            GUILayout.Space(20);
+            GUILayout.Space(10);
+            EditorGUILayout.LabelField(message);
+
+            GUILayout.Space(10);
             configObject = (T)EditorGUILayout.ObjectField(
                                     "Selected config", configObject, typeof(T), false);
 
             GUILayout.Space(10);
 
+            if (!isConfigCreated && configObject == null)
+                return;
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
             ShowPropertiesFromConfigObject();
 
@@ -47,11 +57,11 @@ namespace CraftingModule.Editor
 
         }
 
-        private void CreateConfig()
+        private bool CreateConfig()
         {
             if (SavePath.Equals("") || !AssetDatabase.IsValidFolder(SavePath))
             {
-                AssetDatabase.CreateFolder("Assets", SavePath.Substring(SavePath.IndexOf('/') + 1));
+                return false;
             }
             configObject = ScriptableObject.CreateInstance<T>();
             string assetPath = AssetDatabase.GenerateUniqueAssetPath($"{SavePath}/{ConfigName}.asset");
@@ -59,6 +69,7 @@ namespace CraftingModule.Editor
             AssetDatabase.CreateAsset(configObject, assetPath);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+            return true;
         }
 
         protected virtual void ShowPropertiesFromConfigObject()

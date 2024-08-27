@@ -69,6 +69,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67bbfae506fc4042a616d263b5b1e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPickUpEffects:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CraftingModule.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: ece31efe865fc304c955fa17df92622f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9222110166225360572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,10 +97,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 3
-  hight: 0
+  hight: 2
   itemPrefab: {fileID: 6038448985595083056, guid: 3c70e928e3500c245a370d816bab0dcf, type: 3}
   itemsParent: {fileID: 0}
   PlayerParent: {fileID: 4040756981088404514}
+  OnDropEffects:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CraftingModule.Core.AudioManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 6639c7b99efc4084e94d9a85c427897a, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2447894215789179876
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +128,6 @@ GameObject:
   - component: {fileID: 2683812222557569135}
   - component: {fileID: 2083842218469972383}
   - component: {fileID: 8375740925825012406}
-  - component: {fileID: 6762696207281508556}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -186,19 +215,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6762696207281508556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447894215789179876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c7e83a216d43c4a873174a9125ea63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 2683812222557569135}
 --- !u!1 &3222281223275711602
 GameObject:
   m_ObjectHideFlags: 0
